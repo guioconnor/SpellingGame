@@ -19,7 +19,9 @@ const middleware = [
 
 const store = createStore(
   rootReducer,
-  animalsData,
+  {
+    animals: animalsData,
+  },
   composeWithDevTools(applyMiddleware(...middleware))
 );
 

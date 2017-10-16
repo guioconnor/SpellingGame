@@ -15,7 +15,7 @@ const Grid = ({ list, uriPrefix = '/' }) =>
     <li>
       <NavLink
         to={`${uriPrefix}/${item.itemId}`}>
-        <Image image={item.image} />
+        <Image image={item.image} alt={item.name} />
       </NavLink>
     </li>
   )}</StyledGrid>
