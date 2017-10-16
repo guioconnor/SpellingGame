@@ -1,19 +1,20 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import { getAllAnimals } from '../../redux';
-import AnimalImage from '../../components/atoms/AnimalImage';
-import AnimalsGrid from '../../components/organisms/Grid';
+import Grid from '../../components/organisms/Grid';
+import animalImage from '../../assets/animalImage';
 
-const mapAnimal = (animal) => {
+const mapItem = (animal) => {
   return {
     ...animal,
-    image: <AnimalImage animalId={animal.animalId} />,
+    itemId: animal.animalId,
+    image: animalImage(animal.animalId),
   };
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    animalsList: getAllAnimals(state).map(animal => mapAnimal(animal)),
+    list: getAllAnimals(state).map(animal => mapItem(animal)),
+    uriPrefix: '/animals',
   };
 }
 
@@ -21,4 +22,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {};
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AnimalsGrid);
+export default connect(mapStateToProps, mapDispatchToProps)(Grid);

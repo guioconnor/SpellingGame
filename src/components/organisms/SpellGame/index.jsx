@@ -1,6 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous'
-import AnimalImage from '../../atoms/AnimalImage';
+
+import Image from '../../atoms/Image';
 
 const SpellCard = glamorous.div({
   margin: 'auto',
@@ -19,9 +20,9 @@ const Name = glamorous.h2({
   fontWeight: 'normal',
 });
 
-const AnimalSpell = ({ animal: { animalId, name } }) =>
+const AnimalSpell = ({ item: { name, image } }) =>
   <SpellCard>
-    <AnimalImage animalId={animalId} />
+    <Image image={image} alt={name} />
     <Name>{name}</Name>
   </SpellCard>
 

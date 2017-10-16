@@ -1,3 +1,5 @@
+import { animalImageMiddleware } from '../assets/animalImage';
+
 const initialState = {}
 
 const reducer = (state = initialState, action) => {
@@ -11,15 +13,15 @@ export default reducer;
 
 // Selectors
 export const getAllAnimals = (state) => {
-  return Object.keys(state).map(animalId => state[animalId]);
+  return Object.keys(state)
+    .map(animalId => state[animalId])
+    .map(animalImageMiddleware);
 };
 
 export const getAnimalByDifficultyLevel = (state, level) => {
-  return Object.keys(state)
-    .filter(animalId => (state[animalId].difficulty === level))
-    .map(animalId => state[animalId]);
+  return getAllAnimals.filter(animalId => (state[animalId].difficulty === level));
 }
 
 export const getAnimalById = (state, animalId) => {
-  return state[animalId];
+  return animalImageMiddleware(state[animalId]);
 };

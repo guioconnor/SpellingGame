@@ -2,22 +2,22 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import glamorous from 'glamorous'
 
-import AnimalImage from '../../atoms/AnimalImage';
+import Image from '../../atoms/Image';
 
-const AnimalGrid = glamorous.ul({
+const StyledGrid = glamorous.ul({
   display: 'flex',
   flexWrap: 'wrap',
   listStyleType: 'none',
 });
 
-const AnimalsGrid = ({ animalsList }) =>
-  <AnimalGrid>{animalsList.map(animal =>
+const Grid = ({ list, uriPrefix = '/' }) =>
+  <StyledGrid>{list.map(item =>
     <li>
       <NavLink
-        to={`/animals/${animal.animalId}`}>
-        {animal.image}
+        to={`${uriPrefix}/${item.itemId}`}>
+        <Image image={item.image} />
       </NavLink>
     </li>
-  )}</AnimalGrid>
+  )}</StyledGrid>
 
-export default AnimalsGrid;
+export default Grid;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import bear from './img/bear.svg';
 import butterfly from './img/butterfly.svg';
 import cat from './img/cat.svg';
@@ -78,6 +76,13 @@ const images = {
   wolf,
 }
 
-const Animal = ({ animalId }) => <img src={images[animalId]} width={100} height={100} alt={animalId} />
+const animalImage = (animalId) => images[animalId];
 
-export default Animal;
+export const animalImageMiddleware = (animal) => {
+  return {
+    ...animal,
+    image: animalImage(animal.animalId),
+  };
+}
+
+export default animalImage;
