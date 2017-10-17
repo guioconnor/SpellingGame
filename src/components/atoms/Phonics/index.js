@@ -28,82 +28,82 @@ import Z from './Z.mp3';
 
 const Phonics = ({ mainRef, refA, refB, refC, refD, refE, refF, refG, refH, refI, refJ, refK, refL, refM, refN, refO, refP, refQ, refR, refS, refT, refU, refV, refW, refX, refY, refZ }) => (
   <div>
-    <audio className="player" preload id="A" ref={refA} >
+    <audio className="player" preload="auto" id="A" ref={refA} >
       <source src={A} />
     </audio >
-    <audio className="player" preload id="B" ref={refB} >
+    <audio className="player" preload="auto" id="B" ref={refB} >
       <source src={B} />
     </audio >
-    <audio className="player" preload id="C" ref={refC} >
+    <audio className="player" preload="auto" id="C" ref={refC} >
       <source src={C} />
     </audio >
-    <audio className="player" preload id="D" ref={refD} >
+    <audio className="player" preload="auto" id="D" ref={refD} >
       <source src={D} />
     </audio >
-    <audio className="player" preload id="E" ref={refE} >
+    <audio className="player" preload="auto" id="E" ref={refE} >
       <source src={E} />
     </audio >
-    <audio className="player" preload id="F" ref={refF} >
+    <audio className="player" preload="auto" id="F" ref={refF} >
       <source src={F} />
     </audio >
-    <audio className="player" preload id="G" ref={refG} >
+    <audio className="player" preload="auto" id="G" ref={refG} >
       <source src={G} />
     </audio >
-    <audio className="player" preload id="H" ref={refH} >
+    <audio className="player" preload="auto" id="H" ref={refH} >
       <source src={H} />
     </audio >
-    <audio className="player" preload id="I" ref={refI} >
+    <audio className="player" preload="auto" id="I" ref={refI} >
       <source src={I} />
     </audio >
-    <audio className="player" preload id="J" ref={refJ} >
+    <audio className="player" preload="auto" id="J" ref={refJ} >
       <source src={J} />
     </audio >
-    <audio className="player" preload id="K" ref={refK} >
+    <audio className="player" preload="auto" id="K" ref={refK} >
       <source src={K} />
     </audio >
-    <audio className="player" preload id="L" ref={refL} >
+    <audio className="player" preload="auto" id="L" ref={refL} >
       <source src={L} />
     </audio >
-    <audio className="player" preload id="M" ref={refM} >
+    <audio className="player" preload="auto" id="M" ref={refM} >
       <source src={M} />
     </audio >
-    <audio className="player" preload id="N" ref={refN} >
+    <audio className="player" preload="auto" id="N" ref={refN} >
       <source src={N} />
     </audio >
-    <audio className="player" preload id="O" ref={refO} >
+    <audio className="player" preload="auto" id="O" ref={refO} >
       <source src={O} />
     </audio >
-    <audio className="player" preload id="P" ref={refP} >
+    <audio className="player" preload="auto" id="P" ref={refP} >
       <source src={P} />
     </audio >
-    <audio className="player" preload id="Q" ref={refQ} >
+    <audio className="player" preload="auto" id="Q" ref={refQ} >
       <source src={Q} />
     </audio >
-    <audio className="player" preload id="R" ref={refR} >
+    <audio className="player" preload="auto" id="R" ref={refR} >
       <source src={R} />
     </audio >
-    <audio className="player" preload id="S" ref={refS} >
+    <audio className="player" preload="auto" id="S" ref={refS} >
       <source src={S} />
     </audio >
-    <audio className="player" preload id="T" ref={refT} >
+    <audio className="player" preload="auto" id="T" ref={refT} >
       <source src={T} />
     </audio >
-    <audio className="player" preload id="U" ref={refU} >
+    <audio className="player" preload="auto" id="U" ref={refU} >
       <source src={U} />
     </audio >
-    <audio className="player" preload id="V" ref={refV} >
+    <audio className="player" preload="auto" id="V" ref={refV} >
       <source src={V} />
     </audio >
-    <audio className="player" preload id="W" ref={refW} >
+    <audio className="player" preload="auto" id="W" ref={refW} >
       <source src={W} />
     </audio >
-    <audio className="player" preload id="X" ref={refX} >
+    <audio className="player" preload="auto" id="X" ref={refX} >
       <source src={X} />
     </audio >
-    <audio className="player" preload id="Y" ref={refY} >
+    <audio className="player" preload="auto" id="Y" ref={refY} >
       <source src={Y} />
     </audio >
-    <audio className="player" preload id="Z" ref={refZ} >
+    <audio className="player" preload="auto" id="Z" ref={refZ} >
       <source src={Z} />
     </audio >
   </div>

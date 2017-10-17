@@ -7,6 +7,7 @@ import Phonics from '../../atoms/Phonics';
 
 const SpellCard = glamorous.div({
   margin: 'auto',
+  padding: '50px',
   minHeight: '500px',
   display: 'flex',
   alignItems: 'center',
@@ -22,9 +23,14 @@ const SpellCard = glamorous.div({
 
 const Name = glamorous.div({
   textAlign: 'center',
+  display: 'flex',
+  flexWrap: 'nowrap',
+  "& > span": {
+    margin: '10px',
+  }
 });
 
-class AnimalSpell extends React.Component {
+class SpellContainer extends React.Component {
   static defaultProps = {
     item: {
       name: '',
@@ -49,8 +55,8 @@ class AnimalSpell extends React.Component {
       const { name } = this.props.item;
       this.setState({
         letters: [
-          ...name.split('').slice(0, i),
-          ...letters.slice(i, letters.length),
+          ...name.split('').slice(0, i + 1),
+          ...letters.slice(i + 1, letters.length),
         ],
       });
       // if (this.phonics[letters[i]]) {
@@ -61,7 +67,7 @@ class AnimalSpell extends React.Component {
       if (++i > name.length) {
         clearInterval(interval);
       }
-    }, 400);
+    }, 800);
   }
 
   render() {
@@ -99,10 +105,10 @@ class AnimalSpell extends React.Component {
           refZ={el => this.phonics['Z'] = el}
         />
         <Image image={image} alt={name} />
-        <Name>{letters.map(letter => <Letter>{letter}</Letter>)}</Name>
+        <Name>{letters.map((letter, index) => <Letter key={`pos${index}`}>{letter}</Letter>)}</Name>
       </SpellCard>
     );
   };
 };
 
-export default AnimalSpell;
+export default SpellContainer;

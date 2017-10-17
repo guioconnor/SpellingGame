@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { getAnimalById } from '../../redux';
+import { getAnimalById } from '../../redux/animals';
 
 import SpellGame from '../../components/organisms/SpellGame';
 
 const mapStateToProps = (state, { animalId }) => {
   return {
     item: {
-      ...getAnimalById(state, animalId),
+      ...getAnimalById(state.animals, animalId),
       itemId: animalId,
     },
   };

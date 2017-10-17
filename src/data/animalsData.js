@@ -26,7 +26,7 @@ const animalsData = {
   },
   chicken1: {
     animalId: 'chicken1',
-    name: 'chicken1',
+    name: 'chicken',
     difficulty: 2,
   },
   crab: {
@@ -139,11 +139,16 @@ const animalsData = {
     name: 'sheep',
     difficulty: 2,
   },
-  sheep2: {
-    animalId: 'sheep2',
-    name: 'sheep2',
+  hedgehog: {
+    animalId: 'hedgehog',
+    name: 'hedgehog',
     difficulty: 2,
   },
+  // sheep2: {
+  //   animalId: 'sheep2',
+  //   name: 'sheep',
+  //   difficulty: 2,
+  // },
   snail: {
     animalId: 'snail',
     name: 'snail',
@@ -159,26 +164,26 @@ const animalsData = {
     name: 'squirrel',
     difficulty: 2,
   },
-  unknown01: {
-    animalId: 'unknown01',
-    name: 'unknown01',
-    difficulty: 2,
-  },
-  unknown02: {
-    animalId: 'unknown02',
-    name: 'unknown02',
-    difficulty: 2,
-  },
-  unknown03: {
-    animalId: 'unknown03',
-    name: 'unknown03',
-    difficulty: 2,
-  },
-  unknown04: {
-    animalId: 'unknown04',
-    name: 'unknown04',
-    difficulty: 2,
-  },
+  // unknown01: {
+  //   animalId: 'unknown01',
+  //   name: 'unknown01',
+  //   difficulty: 2,
+  // },
+  // unknown02: {
+  //   animalId: 'unknown02',
+  //   name: 'unknown02',
+  //   difficulty: 2,
+  // },
+  // unknown03: {
+  //   animalId: 'unknown03',
+  //   name: 'unknown03',
+  //   difficulty: 2,
+  // },
+  // unknown04: {
+  //   animalId: 'unknown04',
+  //   name: 'unknown04',
+  //   difficulty: 2,
+  // },
   wolf: {
     animalId: 'wolf',
     name: 'wolf',

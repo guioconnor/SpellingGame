@@ -1,27 +1,11 @@
-import { animalImageMiddleware } from '../assets/animalImage';
+import { combineReducers } from "redux";
 
-const initialState = {}
+import animals from './animals';
+import spellGamePath from './spellGamePath';
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+const rootReducer = combineReducers(
+  animals,
+  spellGamePath
+);
 
-export default reducer;
-
-// Selectors
-export const getAllAnimals = (state) => {
-  return Object.keys(state)
-    .map(animalId => state[animalId])
-    .map(animalImageMiddleware);
-};
-
-export const getAnimalByDifficultyLevel = (state, level) => {
-  return getAllAnimals.filter(animalId => (state[animalId].difficulty === level));
-}
-
-export const getAnimalById = (state, animalId) => {
-  return animalImageMiddleware(state[animalId]);
-};
+export default rootReducer;
