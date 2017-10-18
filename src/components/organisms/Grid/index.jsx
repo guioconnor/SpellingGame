@@ -19,6 +19,10 @@ const Item = glamorous.li({
   borderRadius: '5px',
   margin: '10px',
   background: '#d0d2cB',
+  boxShadow: '2px 2px 2px rgba(0,0,0,0.15)',
+  '&:hover': {
+    background: '#d4d8d0',
+  },
 });
 
 const Grid = ({ list, uriPrefix = '/' }) =>
