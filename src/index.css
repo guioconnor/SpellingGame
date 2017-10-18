@@ -3,4 +3,5 @@ body {
   padding: 0;
   font-family: sans-serif;
   background: #E0E2DB;
+  background: radial-gradient(ellipse at center, #e0e2db 0%,#d3c49a 85%,#d3c49a 100%);
 }

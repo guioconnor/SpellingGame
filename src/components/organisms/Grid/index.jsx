@@ -18,7 +18,7 @@ const Item = glamorous.li({
   border: '1px solid #ccc',
   borderRadius: '5px',
   margin: '10px',
-  background: '#d0d2cB',
+  background: 'rgba(255, 255, 255, .4)',
   boxShadow: '2px 2px 2px rgba(0,0,0,0.15)',
   '&:hover': {
     background: '#d4d8d0',

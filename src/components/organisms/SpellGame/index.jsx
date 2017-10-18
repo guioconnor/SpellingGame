@@ -6,7 +6,10 @@ import Letter from '../../atoms/Letter';
 import Phonics from '../../atoms/Phonics';
 
 const SpellCard = glamorous.div({
-  margin: 'auto',
+  background: 'rgba(255, 255, 255, .2)',
+  margin: '50px 100px',
+  boxShadow: '2px 2px 4px rgba(0,0,0,.10)',
+  borderRadius: '10px',
   padding: '50px',
   minHeight: '500px',
   display: 'flex',
@@ -17,7 +20,7 @@ const SpellCard = glamorous.div({
     marginBottom: '40px',
     width: '100%',
     maxWidth: '500px',
-    height: '100%',
+    height: 'calc(100vh - 360px)',
   }
 });
 
@@ -49,25 +52,31 @@ class SpellContainer extends React.Component {
 
   componentDidMount = () => {
     let i = 0;
+    const { name } = this.props.item;
 
-    const interval = setInterval(() => {
-      const { letters } = this.state;
-      const { name } = this.props.item;
-      this.setState({
-        letters: [
-          ...name.split('').slice(0, i + 1),
-          ...letters.slice(i + 1, letters.length),
-        ],
-      });
-      // if (this.phonics[letters[i]]) {
-      //   this.phonics[letters[i]].play();
-      // }
-      const letterPlayer = document.getElementById(name[i] && name[i].toUpperCase());
-      if (letterPlayer) { letterPlayer.play() }
-      if (++i > name.length) {
-        clearInterval(interval);
-      }
-    }, 800);
+    // const utterThis = new SpeechSynthesisUtterance(name);
+    // speechSynthesis.speak(utterThis)
+
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        const { letters } = this.state;
+        this.setState({
+          letters: [
+            ...name.split('').slice(0, i + 1),
+            ...letters.slice(i + 1, letters.length),
+          ],
+        });
+        // if (this.phonics[letters[i]]) {
+        //   this.phonics[letters[i]].play();
+        // }
+        const letterPlayer = document.getElementById(name[i] && name[i].toUpperCase());
+        if (letterPlayer) { letterPlayer.play() }
+        if (++i > name.length) {
+          clearInterval(interval);
+        }
+      }, 800);
+    }, 2000)
+
   }
 
   render() {
@@ -105,7 +114,10 @@ class SpellContainer extends React.Component {
           refZ={el => this.phonics['Z'] = el}
         />
         <Image image={image} alt={name} />
-        <Name>{letters.map((letter, index) => <Letter key={`pos${index}`}>{letter}</Letter>)}</Name>
+        <Name>{letters.map((letter, index) => <Letter key={`pos${index}`} onClick={() => {
+          const letterPlayer = document.getElementById(letter.toUpperCase());
+          if (letterPlayer) { letterPlayer.play() }
+        }}>{letter}</Letter>)}</Name>
       </SpellCard>
     );
   };
