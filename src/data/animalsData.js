@@ -9,21 +9,21 @@ const animalsData = {
     name: 'beaver',
     difficulty: 2,
   },
-  // butterfly: {
-  //   animalId: 'butterfly',
-  //   name: 'butterfly',
-  //   difficulty: 2,
-  // },
+  butterfly: {
+    animalId: 'butterfly',
+    name: 'butterfly',
+    difficulty: 2,
+  },
   cat: {
     animalId: 'cat',
     name: 'cat',
     difficulty: 1,
   },
-  // chameleon: {
-  //   animalId: 'chameleon',
-  //   name: 'chameleon',
-  //   difficulty: 2,
-  // },
+  chameleon: {
+    animalId: 'chameleon',
+    name: 'chameleon',
+    difficulty: 2,
+  },
   chick: {
     animalId: 'chick',
     name: 'chick',
@@ -34,11 +34,6 @@ const animalsData = {
     name: 'chicken',
     difficulty: 2,
   },
-  // chicken1: {
-  //   animalId: 'chicken1',
-  //   name: 'chicken',
-  //   difficulty: 2,
-  // },
   cow: {
     animalId: 'cow',
     name: 'cow',
@@ -74,26 +69,26 @@ const animalsData = {
     name: 'elephant',
     difficulty: 2,
   },
-  // fish: {
-  //   animalId: 'fish',
-  //   name: 'fish',
-  //   difficulty: 2,
-  // },
+  fish: {
+    animalId: 'fish',
+    name: 'fish',
+    difficulty: 2,
+  },
   fox: {
     animalId: 'fox',
     name: 'fox',
     difficulty: 2,
   },
-  // frog: {
-  //   animalId: 'frog',
-  //   name: 'frog',
-  //   difficulty: 1,
-  // },
-  // giraffe: {
-  //   animalId: 'giraffe',
-  //   name: 'giraffe',
-  //   difficulty: 2,
-  // },
+  frog: {
+    animalId: 'frog',
+    name: 'frog',
+    difficulty: 1,
+  },
+  giraffe: {
+    animalId: 'giraffe',
+    name: 'giraffe',
+    difficulty: 2,
+  },
   // hippo: {
   //   animalId: 'hippo',
   //   name: 'hippo',
@@ -124,21 +119,16 @@ const animalsData = {
   //   name: 'octopus',
   //   difficulty: 2,
   // },
-  // ostrich: {
-  //   animalId: 'ostrich',
-  //   name: 'ostrich',
-  //   difficulty: 2,
-  // },
+  ostrich: {
+    animalId: 'ostrich',
+    name: 'ostrich',
+    difficulty: 2,
+  },
   owl: {
     animalId: 'owl',
     name: 'owl',
     difficulty: 2,
   },
-  // owl1: {
-  //   animalId: 'owl1',
-  //   name: 'owl1',
-  //   difficulty: 2,
-  // },
   panda: {
     animalId: 'panda',
     name: 'panda',
@@ -164,16 +154,16 @@ const animalsData = {
     name: 'racoon',
     difficulty: 2,
   },
-  // rooster: {
-  //   animalId: 'rooster',
-  //   name: 'rooster',
-  //   difficulty: 2,
-  // },
-  // shark: {
-  //   animalId: 'shark',
-  //   name: 'shark',
-  //   difficulty: 2,
-  // },
+  rooster: {
+    animalId: 'rooster',
+    name: 'rooster',
+    difficulty: 2,
+  },
+  shark: {
+    animalId: 'shark',
+    name: 'shark',
+    difficulty: 2,
+  },
   sheep: {
     animalId: 'sheep',
     name: 'sheep',
@@ -184,21 +174,16 @@ const animalsData = {
     name: 'hedgehog',
     difficulty: 2,
   },
-  // sheep2: {
-  //   animalId: 'sheep2',
-  //   name: 'sheep',
-  //   difficulty: 2,
-  // },
-  // snail: {
-  //   animalId: 'snail',
-  //   name: 'snail',
-  //   difficulty: 2,
-  // },
-  // squid: {
-  //   animalId: 'squid',
-  //   name: 'squid',
-  //   difficulty: 2,
-  // },
+  snail: {
+    animalId: 'snail',
+    name: 'snail',
+    difficulty: 2,
+  },
+  squid: {
+    animalId: 'squid',
+    name: 'squid',
+    difficulty: 2,
+  },
   squirrel: {
     animalId: 'squirrel',
     name: 'squirrel',
@@ -209,26 +194,6 @@ const animalsData = {
     name: 'tiger',
     difficulty: 2,
   },
-  // unknown01: {
-  //   animalId: 'unknown01',
-  //   name: 'unknown01',
-  //   difficulty: 2,
-  // },
-  // unknown02: {
-  //   animalId: 'unknown02',
-  //   name: 'unknown02',
-  //   difficulty: 2,
-  // },
-  // unknown03: {
-  //   animalId: 'unknown03',
-  //   name: 'unknown03',
-  //   difficulty: 2,
-  // },
-  // unknown04: {
-  //   animalId: 'unknown04',
-  //   name: 'unknown04',
-  //   difficulty: 2,
-  // },
   walrus: {
     animalId: 'walrus',
     name: 'walrus',
