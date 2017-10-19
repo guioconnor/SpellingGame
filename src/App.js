@@ -10,6 +10,10 @@ import animalsData from './data/animalsData';
 
 import AnimalsGrid from './containers/AnimalsGridContainer';
 import AnimalSpell from './containers/AnimalSpellContainer';
+import LettersGrid from './containers/LettersGridContainer';
+
+import Phonics from './components/atoms/Phonics';
+
 
 const history = createHistory();
 
@@ -30,17 +34,21 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <Switch>
-            <Route exact path="/" component={AnimalsGrid} />
-            <Route
-              exact
-              path="/animals/:animalId"
-              render={({ match }) => (
-                <AnimalSpell
-                  animalId={match.params.animalId}
-                />
-              )} />
-          </Switch>
+          <main>
+            <Switch>
+              <Route exact path="/" component={AnimalsGrid} />
+              <Route exact path="/letters" component={LettersGrid} />
+              <Route
+                exact
+                path="/animals/:animalId"
+                render={({ match }) => (
+                  <AnimalSpell
+                    animalId={match.params.animalId}
+                  />
+                )} />
+            </Switch>
+            <Phonics />
+          </main>
         </Router>
       </Provider>
     );

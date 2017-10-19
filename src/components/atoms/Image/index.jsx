@@ -8,7 +8,6 @@ const Image = ({ image, alt, ...props }) =>
     height={100}
     alt={alt}
     onClick={(e) => {
-      console.log(e);
       const utterThis = new SpeechSynthesisUtterance(alt);
       speechSynthesis.speak(utterThis);
     }} />
