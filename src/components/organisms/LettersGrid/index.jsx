@@ -111,7 +111,7 @@ class Grid extends React.Component {
               let want = ' wants a banana';
 
               if (phrase === 'luna') {
-                want = ' wants all the food';
+                want = ' wants bananas, sausages, broccoli and all the food';
               }
               speakSynth(this.state.phrase.join('') + want);
             }}>🍌</Button>}
