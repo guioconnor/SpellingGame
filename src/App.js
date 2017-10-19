@@ -31,7 +31,7 @@ class App extends Component {
       <Provider store={store}>
         <Router history={history}>
           <Switch>
-            <Route exact path="/animals" component={AnimalsGrid} />
+            <Route exact path="/" component={AnimalsGrid} />
             <Route
               exact
               path="/animals/:animalId"
