@@ -15,7 +15,7 @@ const StyledLetter = glamorous.span({
   fontSize: '80px',
   width: '100px',
   height: '100px',
-  lineHeight: '100px',
+  lineHeight: '90px',
   verticalAlign: 'middle',
   background: 'rgba(255, 255, 255, .5)',
   textAlign: 'center',
