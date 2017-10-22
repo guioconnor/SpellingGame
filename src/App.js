@@ -11,6 +11,7 @@ import animalsData from './data/animalsData';
 import AnimalsGrid from './containers/AnimalsGridContainer';
 import AnimalSpell from './containers/AnimalSpellContainer';
 import LettersGrid from './containers/LettersGridContainer';
+import Dashboard from './components/organisms/Dashboard';
 
 import Phonics from './components/atoms/Phonics';
 
@@ -36,7 +37,8 @@ class App extends Component {
         <Router history={history}>
           <main>
             <Switch>
-              <Route exact path="/" component={AnimalsGrid} />
+              <Route exact path="/" component={Dashboard} />
+              <Route exact path="/animals" component={AnimalsGrid} />
               <Route exact path="/letters" component={LettersGrid} />
               <Route
                 exact
