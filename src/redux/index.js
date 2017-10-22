@@ -2,10 +2,11 @@ import { combineReducers } from "redux";
 
 import animals from './animals';
 import spellGamePath from './spellGamePath';
+import lettersGrid from './lettersGrid';
 
-const rootReducer = combineReducers(
+export default combineReducers({
   animals,
-  spellGamePath
-);
+  spellGamePath,
+  lettersGrid,
+});
 
-export default rootReducer;

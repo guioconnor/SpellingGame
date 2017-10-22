@@ -1,6 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import Letter, { speakTypes } from '../../atoms/Letter';
+import Image from '../../atoms/Image';
 import { speakSynth } from '../../../lib/speak';
 
 const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -39,6 +40,11 @@ const Phrase = glamorous.ul({
   justifyContent: 'center',
 })
 
+const StyledImage = glamorous(Image)({
+  background: 'rgba(255, 255, 255, .5)',
+  borderRadius: '5px',
+})
+
 const List = glamorous.ul({
   margin: 0,
   padding: '50px 100px',
@@ -53,80 +59,67 @@ const Item = glamorous.li({
   margin: '10px',
 });
 
-class Grid extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      phrase: [],
-      canPlayBanana: false,
-    }
-  }
+const Grid = ({
+  matchedAnimal,
+  addLetter,
+  clearPhrase,
+  phrase,
+  activateBanana,
+  canPlayBanana,
+  removeLastLetter,
+}) => {
+  return (
+    <div>
+      <List>
+        {letters.map(letter =>
+          <Item key={letter}>
+            <Letter speak={speakTypes.PHONIC} onClick={addLetter}>
+              {letter}
+            </Letter>
+          </Item>
+        )}
+      </List>
+      <Phrase>
+        {phrase.map(letter =>
+          <Item key={letter}>
+            <Letter speak={speakTypes.PHONIC} onClick={this.onClick}>
+              {letter}
+            </Letter>
+          </Item>
+        )}
+        {matchedAnimal &&
+          <Item key="animal">
+            <StyledImage image={matchedAnimal.image} alt={matchedAnimal.name} />
+          </Item>}
+      </Phrase>
+      <Controls>
+        <Button
+          onClick={() => {
+            clearPhrase();
+          }}>❌</Button>
+        <Button
+          onClick={() => {
+            speakSynth(phrase.join(''));
+            activateBanana();
+          }}>🗣</Button>
 
-  onClick = (letter) => {
-    this.setState({
-      phrase: [...this.state.phrase, letter],
-      canPlayBanana: false,
-    });
-  }
+        {canPlayBanana && <Button
+          onClick={() => {
+            const p = phrase.join('');
+            let want = ' wants a banana';
 
-  render() {
-    return (
-      <div>
-        <List>
-          {letters.map(letter =>
-            <Item key={letter}>
-              <Letter speak={speakTypes.PHONIC} onClick={this.onClick}>
-                {letter}
-              </Letter>
-            </Item>
-          )}
-        </List>
-        <Phrase>
-          {this.state.phrase.map(letter =>
-            <Item key={letter}>
-              <Letter speak={speakTypes.PHONIC} onClick={this.onClick}>
-                {letter}
-              </Letter>
-            </Item>
-          )}
-        </Phrase>
-        <Controls>
-          <Button
-            onClick={() => {
-              this.setState({
-                phrase: [],
-              })
-            }}>❌</Button>
-          <Button
-            onClick={() => {
-              speakSynth(this.state.phrase.join(''));
-              this.setState({
-                canPlayBanana: true,
-              });
-            }}>🗣</Button>
-
-          {this.state.canPlayBanana && <Button
-            onClick={() => {
-              const phrase = this.state.phrase.join('');
-              let want = ' wants a banana';
-
-              if (phrase === 'luna') {
-                want = ' wants bananas, sausages, broccoli and all the food';
-              }
-              speakSynth(this.state.phrase.join('') + want);
-            }}>🍌</Button>}
-          <Button
-            onClick={() => {
-              this.setState({
-                phrase: [...this.state.phrase.slice(0, this.state.phrase.length - 1)],
-                canPlayBanana: false,
-              });
-            }}>⬅</Button>
-        </Controls>
-      </div>
-    );
-  }
+            if (p === 'luna') {
+              want = ' wants bananas, sausages, broccoli and all the food';
+            }
+            speakSynth(p + want);
+          }}>🍌</Button>}
+        <Button
+          onClick={() => {
+            removeLastLetter();
+          }}>⬅</Button>
+      </Controls>
+    </div >
+  );
 }
-
 
 export default Grid;

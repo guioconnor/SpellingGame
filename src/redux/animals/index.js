@@ -1,6 +1,6 @@
 import { animalImageMiddleware } from '../../assets/animalImage';
 
-const initialState = {}
+const initialState = {};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,5 +23,8 @@ export const getAnimalByDifficultyLevel = (state, level) => {
 }
 
 export const getAnimalById = (state, animalId) => {
+  if (!state[animalId]) {
+    return;
+  }
   return animalImageMiddleware(state[animalId]);
 };
