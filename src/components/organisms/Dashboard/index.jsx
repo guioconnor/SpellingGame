@@ -5,6 +5,12 @@ import glamorous from 'glamorous';
 
 import { getGreetingTime, daysOfWeek } from '../../../lib/timeHelpers';
 
+const SectionLink = glamorous(NavLink)({
+  fontSize: '30px',
+  padding: '20px',
+  margin: 'auto 30px',
+});
+
 const StyledDashboard = glamorous.div({
   minHeight: '100vh',
 });
@@ -54,14 +60,14 @@ class Dashboard extends React.Component {
       <StyledDashboard>
         <Greeting timeOfDay={this.state.timeOfDay} />
         <Day dayOfTheWeek={this.state.dayOfWeek} />
-        <NavLink
+        <SectionLink
           to={`/animals`}>
           Animals
-        </NavLink>
-        <NavLink
+        </SectionLink>
+        <SectionLink
           to={`/letters`}>
           Letters
-        </NavLink>
+        </SectionLink>
       </StyledDashboard>
     );
   }
