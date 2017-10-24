@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import glamorous from 'glamorous';
 import Letter, { speakTypes } from '../../atoms/Letter';
 import Image from '../../atoms/Image';
@@ -106,7 +107,7 @@ const Grid = ({
         {canPlayBanana && <Button
           onClick={() => {
             const p = phrase.join('');
-            let want = ' wants a banana';
+            let want = ' wants ' + _.get(matchedAnimal, 'food', 'food');
 
             if (p === 'luna') {
               want = ' wants bananas, sausages, broccoli and all the food';
