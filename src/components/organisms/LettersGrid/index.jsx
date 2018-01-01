@@ -74,7 +74,7 @@ const Grid = ({
       <List>
         {letters.map(letter =>
           <Item key={letter}>
-            <Letter speak={speakTypes.PHONIC} onClick={addLetter}>
+            <Letter speakType={speakTypes.PHONIC} onClick={addLetter} speakOnHover>
               {letter}
             </Letter>
           </Item>
@@ -83,7 +83,7 @@ const Grid = ({
       <Phrase>
         {phrase.map(letter =>
           <Item key={letter}>
-            <Letter speak={speakTypes.PHONIC} onClick={this.onClick}>
+            <Letter speakType={speakTypes.PHONIC}>
               {letter}
             </Letter>
           </Item>

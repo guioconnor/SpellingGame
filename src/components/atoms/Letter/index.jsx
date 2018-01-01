@@ -22,26 +22,18 @@ const StyledLetter = glamorous.span({
   cursor: 'pointer',
 });
 
-const Letter = ({ speak = speakTypes.NONE, children, onClick = () => { } }) => {
-  let customOnClick;
+const Letter = ({ speakType = speakTypes.NONE, children, onClick = () => { }, speakOnHover }) => {
+  let speak;
 
-  switch (speak) {
+  switch (speakType) {
     case 'PHONIC':
-      customOnClick = () => {
-        speakPhonic(children);
-        onClick(children);
-      }
+      speak = speakPhonic;
       break;
     case 'SYNTH':
-      customOnClick = () => {
-        speakSynth(children);
-        onClick(children);
-      }
+      speak = speakSynth;
       break;
     default:
-      customOnClick = () => {
-        onClick(children);
-      };
+      speak = () => { };
   }
 
   // if (speak) {
@@ -52,9 +44,15 @@ const Letter = ({ speak = speakTypes.NONE, children, onClick = () => { } }) => {
   // }
 
   return <StyledLetter
-    onClick={customOnClick}>
+    onClick={() => {
+      speak(children);
+      onClick(children);
+    }}
+    onMouseOver={() => {
+      speakOnHover && speak(children);
+    }}>
     {children}
-  </StyledLetter>
+  </StyledLetter >
 }
 
 export default Letter;
