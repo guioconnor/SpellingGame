@@ -35,11 +35,13 @@ import pig from './img/pig.svg';
 import polarbear from './img/polarbear.svg';
 import rabbit from './img/rabbit.svg';
 import racoon from './img/racoon.svg';
+import raindeer from './img/raindeer.svg';
 import rooster from './img/rooster.svg';
 import shark from './img/shark.svg';
 import sheep from './img/sheep.svg';
 import sheep2 from './img/sheep2.svg';
 import snail from './img/snail.svg';
+import snowman from './img/snowman.svg';
 import squid from './img/squid.svg';
 import squirrel from './img/squirrel.svg';
 import tiger from './img/tiger.svg';
@@ -89,11 +91,13 @@ const images = {
   polarbear,
   rabbit,
   racoon,
+  raindeer,
   rooster,
   shark,
   sheep,
   sheep2,
   snail,
+  snowman,
   squid,
   squirrel,
   tiger,

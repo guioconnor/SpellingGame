@@ -197,6 +197,12 @@ const animalsData = {
     name: 'racoon',
     difficulty: 2,
   },
+  raindeer: {
+    animalId: 'raindeer',
+    food: 'carrots',
+    name: 'raindeer',
+    difficulty: 2,
+  },
   rooster: {
     animalId: 'rooster',
     food: 'worms',
@@ -213,6 +219,12 @@ const animalsData = {
     animalId: 'sheep',
     food: 'grass',
     name: 'sheep',
+    difficulty: 2,
+  },
+  snowman: {
+    animalId: 'snowman',
+    food: 'ice cubes',
+    name: 'snowman',
     difficulty: 2,
   },
   hedgehog: {
