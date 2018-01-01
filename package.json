@@ -22,6 +22,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "surge build spelling.surge.sh"
+    "deploy-dev": "surge build spelling-dev.surge.sh",
+    "deploy-prod": "surge build spelling.surge.sh"
   }
 }
