@@ -60,67 +60,114 @@ const Item = glamorous.li({
   margin: '10px',
 });
 
-const Grid = ({
-  matchedAnimal,
-  addLetter,
-  clearPhrase,
-  phrase,
-  activateBanana,
-  canPlayBanana,
-  removeLastLetter,
-}) => {
-  return (
-    <div>
-      <List>
-        {letters.map(letter =>
-          <Item key={letter}>
-            <Letter speakType={speakTypes.PHONIC} onClick={addLetter} speakOnHover>
-              {letter}
-            </Letter>
-          </Item>
-        )}
-      </List>
-      <Phrase>
-        {phrase.map(letter =>
-          <Item key={letter}>
-            <Letter speakType={speakTypes.PHONIC}>
-              {letter}
-            </Letter>
-          </Item>
-        )}
-        {matchedAnimal &&
-          <Item key="animal">
-            <StyledImage image={matchedAnimal.image} alt={matchedAnimal.name} />
-          </Item>}
-      </Phrase>
-      <Controls>
-        <Button
-          onClick={() => {
-            clearPhrase();
-          }}>❌</Button>
-        <Button
-          onClick={() => {
-            speakSynth(phrase.join(''));
-            activateBanana();
-          }}>🗣</Button>
+class Grid extends React.Component {
+  validChars = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+    'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+    ' '
+  ];
 
-        {canPlayBanana && <Button
-          onClick={() => {
-            const p = phrase.join('');
-            let want = ' wants ' + _.get(matchedAnimal, 'food', 'food');
+  isValidLetter = (key) => {
+    return this.validChars.includes(key);
+  };
 
-            if (p === 'luna') {
-              want = ' wants bananas, sausages, broccoli and all the food';
-            }
-            speakSynth(p + want);
-          }}>🍌</Button>}
-        <Button
-          onClick={() => {
-            removeLastLetter();
-          }}>⬅</Button>
-      </Controls>
-    </div >
-  );
+  onKeyUp = (e) => {
+    const { clearPhrase,
+      removeLastLetter,
+      addLetter,
+    } = this.props;
+    const { key, keyCode } = e;
+    const KEYCODES = {
+      ESC: 27,
+      BACKSPACE: 8,
+      ENTER: 13,
+    }
+    const COMMANDS = {
+      [KEYCODES.ESC]: clearPhrase,
+      [KEYCODES.BACKSPACE]: removeLastLetter,
+    }
+
+    if (COMMANDS[keyCode]) {
+      COMMANDS[keyCode]();
+    } else if (addLetter && key && this.isValidLetter(key)) {
+      addLetter(key);
+    }
+  };
+
+  componentDidMount() {
+    document.addEventListener("keyup", this.onKeyUp);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("keyup", this.onKeyUp);
+  }
+
+  render() {
+    const {
+      matchedAnimal,
+      addLetter,
+      clearPhrase,
+      phrase,
+      activateBanana,
+      canPlayBanana,
+      removeLastLetter,
+    } = this.props;
+
+    return (
+      <div>
+        <List>
+          {letters.map(letter =>
+            <Item key={letter}>
+              <Letter speakType={speakTypes.PHONIC} onClick={addLetter} speakOnHover>
+                {letter}
+              </Letter>
+            </Item>
+          )}
+        </List>
+        <Phrase>
+          {phrase.map((letter, index) =>
+            <Item key={letter + index}>
+              <Letter speakType={speakTypes.PHONIC}>
+                {letter}
+              </Letter>
+            </Item>
+          )}
+          {matchedAnimal &&
+            <Item key="animal">
+              <StyledImage image={matchedAnimal.image} alt={matchedAnimal.name} />
+            </Item>}
+        </Phrase>
+        <Controls>
+          <Button
+            onClick={() => {
+              clearPhrase();
+            }}>❌</Button>
+          <Button
+            onClick={() => {
+              speakSynth(phrase.join(''));
+              activateBanana();
+            }}>🗣</Button>
+
+          {canPlayBanana && <Button
+            onClick={() => {
+              const p = phrase.join('');
+              let want = ' wants ' + _.get(matchedAnimal, 'food', 'food');
+
+              if (p === 'luna') {
+                want = ' wants bananas, sausages, broccoli and all the food';
+              }
+              speakSynth(p + want);
+            }}>🍌</Button>}
+          <Button
+            onClick={() => {
+              removeLastLetter();
+            }}>⬅</Button>
+        </Controls>
+      </div >
+    );
+  }
 }
 
 export default Grid;
