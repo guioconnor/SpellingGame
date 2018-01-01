@@ -112,6 +112,12 @@ const animalsData = {
     name: 'giraffe',
     difficulty: 2,
   },
+  gingerbread: {
+    animalId: 'gingerbread',
+    food: 'sugar',
+    name: 'gingerbread',
+    difficulty: 2,
+  },
   // hippo: {
   //   animalId: 'hippo',
   //   name: 'hippo',
@@ -208,6 +214,12 @@ const animalsData = {
     food: 'worms',
     name: 'rooster',
     difficulty: 2,
+  },
+  santa: {
+    animalId: 'santa',
+    food: 'cookies and mince pies',
+    name: 'santa',
+    difficulty: 1,
   },
   shark: {
     animalId: 'shark',

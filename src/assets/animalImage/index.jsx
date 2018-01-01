@@ -18,6 +18,7 @@ import fish from './img/fish.svg';
 import fox from './img/fox.svg';
 import frog from './img/frog.svg';
 import giraffe from './img/giraffe.svg';
+import gingerbread from './img/gingerbread.svg';
 import hedgehog from './img/hedgehog.svg';
 import hippo from './img/hippo.svg';
 import lion from './img/lion.svg';
@@ -37,6 +38,7 @@ import rabbit from './img/rabbit.svg';
 import racoon from './img/racoon.svg';
 import raindeer from './img/raindeer.svg';
 import rooster from './img/rooster.svg';
+import santa from './img/santa.svg';
 import shark from './img/shark.svg';
 import sheep from './img/sheep.svg';
 import sheep2 from './img/sheep2.svg';
@@ -74,6 +76,7 @@ const images = {
   fox,
   frog,
   giraffe,
+  gingerbread,
   hedgehog,
   hippo,
   lion,
@@ -93,6 +96,7 @@ const images = {
   racoon,
   raindeer,
   rooster,
+  santa,
   shark,
   sheep,
   sheep2,
